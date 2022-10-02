@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import api from './api/api.js'
+import Header from './components/Header';
+import FeaturedEvents from './components/FeaturedEvents';
+import AllSection from './components/AllSection';
 
 function App() {
+  console.log(api.getData().then(res => console.log(res.data)).catch(err => console.log(err)))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <FeaturedEvents />
+      <AllSection  />
     </div>
   );
 }
